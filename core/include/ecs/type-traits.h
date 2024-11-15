@@ -4,6 +4,7 @@
 #include <concepts>
 
 #include "component-base.h"
+#include "ecs/tag-component.h"
 
 namespace core::ecs {
 
@@ -25,6 +26,19 @@ namespace core::ecs {
  */
 template <typename T>
 concept is_component = std::derived_from<T, ComponentBase>;
+
+/**
+ * @ingroup ecs
+ * @brief Concept to verify if a type is a tag component.
+ *
+ * The `is_tag_component` concept checks if a type is derived from `TagComponent`.
+ * It is used to identify components that act as markers or tags without additional data.
+ *
+ * @tparam T The type to check.
+ * @concept is_tag_component
+ */
+template <typename T>
+concept is_tag_component = std::derived_from<T, TagComponent>;
 
 }  // namespace core::ecs
 
