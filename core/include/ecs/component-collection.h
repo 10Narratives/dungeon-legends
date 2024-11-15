@@ -77,6 +77,16 @@ template <is_component ComponentType>
     return target_component;
 }
 
+template <is_component... ComponentTypes>
+bool ComponentCollection::HasAll() const noexcept {
+  return (inner_components_.contains(typeid(ComponentTypes)) && ...);
+}
+
+template <is_component... ComponentTypes>
+bool ComponentCollection::HasAny() const noexcept {
+  return (inner_components_.contains(typeid(ComponentTypes)) || ...);
+}
+
 }  // namespace core::ecs
 
 #endif
