@@ -7,4 +7,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS true)
 
 add_subdirectory(core)
 
+add_subdirectory(tests)
+
 add_executable(${PROJECT_NAME} main.cc)
