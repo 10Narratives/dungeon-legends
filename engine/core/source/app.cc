@@ -5,13 +5,18 @@
 #include <filesystem>
 #include <optional>
 
+#include "spdlog/spdlog.h"
+
 using engine::core::App;
 
 // TODO: Remove hardcode of config path
 constexpr std::string cfg_path{"config.json"};
 
 App::App() {
+  spdlog::info("initializing application instance");
+  spdlog::info("reading configuration file");
   Config cfg{cfg_path};
+  spdlog::info("configuration file was readden successfully");
   initWindow(cfg.GetWindowConfig());
 }
 
