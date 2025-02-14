@@ -3,21 +3,23 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <filesystem>
-#include <iostream>
 #include <optional>
+
 using engine::core::App;
 
+// TODO: Remove hardcode of config path
+constexpr std::string cfg_path{"config.json"};
+
 App::App() {
-  // TODO: Remove hardcode of config path
-  std::filesystem::path config_path{"config.json"};
-  Config cfg{config_path};
-  const auto &window_cfg = cfg.GetWindowConfig();
+  Config cfg{cfg_path};
+  initWindow(cfg.GetWindowConfig());
+}
 
-  std::cout << window_cfg.width << window_cfg.height
-            << window_cfg.framerate_limit << window_cfg.title
-            << window_cfg.key_repeat << window_cfg.vertical_sync << std::endl;
-
-  window_.create(sf::VideoMode::getDesktopMode(), "Dungeon Legends");
+void App::initWindow(const WindowConfig &window_cfg) {
+  window_.create(sf::VideoMode::getDesktopMode(), window_cfg.title);
+  window_.setFramerateLimit(window_cfg.framerate_limit);
+  window_.setVerticalSyncEnabled(window_cfg.vertical_sync);
+  window_.setKeyRepeatEnabled(window_cfg.key_repeat);
 }
 
 void App::Run() {

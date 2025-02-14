@@ -37,3 +37,4 @@
 .cache
 dungeon-legends.code-workspace
 build
+.env
