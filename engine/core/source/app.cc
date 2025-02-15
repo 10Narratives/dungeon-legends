@@ -1,16 +1,17 @@
 #include "core/app.h"
-#include "core/config.h"
+
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <filesystem>
 #include <optional>
 
+#include "core/config.h"
 #include "spdlog/spdlog.h"
 
 using engine::core::App;
 
 // TODO: Remove hardcode of config path
-constexpr std::string cfg_path{"config.json"};
+const std::string cfg_path{"config/config.json"};
 
 App::App() {
   spdlog::info("initializing application instance");
