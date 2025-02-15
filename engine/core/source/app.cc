@@ -1,5 +1,6 @@
 #include "core/app.h"
 
+#include <SFML/System/Time.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <filesystem>
@@ -30,13 +31,17 @@ void App::initWindow(const WindowConfig &window_cfg) {
 
 void App::Run() {
   while (window_.isOpen()) {
-    while (const std::optional event = window_.pollEvent()) {
-      if (event->is<sf::Event::Closed>()) {
-        window_.close();
-      }
-    }
+    // while (const std::optional event = window_.pollEvent()) {
+    //   if (event->is<sf::Event::Closed>()) {
+    //     window_.close();
+    //   }
+    // }
+    auto current_state = state_manager_.Current().lock();
+    current_state->HandleInput(window_);
+    current_state->Update(sf::Time{});
+    current_state->Render(window_);
 
-    window_.clear();
-    window_.display();
+    // window_.clear();
+    // window_.display();
   }
 }

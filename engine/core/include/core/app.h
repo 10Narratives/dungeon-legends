@@ -1,18 +1,21 @@
 #pragma once
 
-#include "core/config.h"
 #include <SFML/Graphics/RenderWindow.hpp>
+
+#include "core/config.h"
+#include "core/state-manager.h"
 
 namespace engine::core {
 class App final {
-public:
+ public:
   App();
 
   void Run();
 
-private:
+ private:
   void initWindow(const WindowConfig &window_cfg);
 
   sf::RenderWindow window_;
+  StateManager state_manager_;
 };
-} // namespace engine::core
+}  // namespace engine::core
