@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# Local
+
+.vscode
+.cache
+dungeon-legends.code-workspace
+build
+.env
