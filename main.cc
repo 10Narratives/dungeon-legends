@@ -1,15 +1,13 @@
-#include "engine/core/include/core/app.h"
 #include <exception>
-#include <iostream>
+#include <spdlog/spdlog.h>
 
 int main() {
   try {
+    // Read env variables
     // Initialize application
-    auto game = engine::core::App();
-    // Call run method
-    game.Run();
+    // Run application method
   } catch (const std::exception &fatal_error) {
-    std::cout << fatal_error.what() << "\n";
+    spdlog::error(fatal_error.what());
     return 1;
   }
   return 0;
