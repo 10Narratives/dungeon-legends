@@ -1,5 +1,6 @@
 #pragma once
 
+#include "config.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
 
 namespace engine::core {
@@ -10,6 +11,8 @@ public:
   void Run();
 
 private:
+  void initWindow(const WindowConfig &cfg);
+
   sf::RenderWindow window_;
 };
 } // namespace engine::core

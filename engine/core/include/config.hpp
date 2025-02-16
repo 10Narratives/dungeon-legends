@@ -6,7 +6,7 @@ using json = nlohmann::json;
 
 namespace engine::core {
 
-/// WindowConfig contains configuration of `sf::RenderWindow`.
+/// WindowConfig contains configuration of window.
 struct WindowConfig final {
 public:
   bool vertical_sync;
@@ -31,7 +31,7 @@ public:
   */
   explicit Config(const std::filesystem::path &cfg_path);
 
-  /// GetWindowConfig retrieves configuration of `sf::RenderWindow`
+  /// GetWindowConfig retrieves configuration of `sf::RenderWindow`.
   [[nodiscard]] const WindowConfig &GetWindowConfig() const noexcept;
 
 private:
