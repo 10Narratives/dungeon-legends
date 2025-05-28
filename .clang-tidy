@@ -1,0 +1,36 @@
+Checks: >
+  -*,
+  google-*,
+  readability-*,
+  modernize-*,
+  cppcoreguidelines-*,
+  performance-*,
+  bugprone-*,
+  misc-*,
+  clang-analyzer-*
+
+CheckOptions:
+  readability-identifier-naming.ClassCase: CamelCase
+  readability-identifier-naming.StructCase: CamelCase
+  readability-identifier-naming.EnumCase: CamelCase
+  readability-identifier-naming.FunctionCase: camelBack
+  readability-identifier-naming.VariableCase: camelBack
+  readability-identifier-naming.PrivateMemberSuffix: _
+  readability-identifier-naming.PublicMemberSuffix: ''
+  readability-identifier-naming.ConstantCase: UPPER_CASE
+  readability-identifier-naming.GlobalConstantCase: UPPER_CASE
+
+  # Avoid using short, long, and long long types
+  google-runtime-int.UseSignedIntegers: true
+  google-runtime-int.Replacements:
+    short: int16_t
+    long: int64_t
+    long long: int64_t
+
+  # Ensure proper use of override and final
+  google-readability-casting.Checks: Strict
+  google-readability-todo.Tag: TODO
+  google-readability-todo.Author: true
+  google-readability-todo.Format: 'TODO(username):'
+
+WarningsAsErrors: '*'
