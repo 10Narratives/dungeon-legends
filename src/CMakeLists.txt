@@ -1,0 +1,6 @@
+add_subdirectory(entities)
+add_subdirectory(repositories)
+add_subdirectory(services)
+add_subdirectory(controllers)
+add_subdirectory(views)
+add_subdirectory(app)
