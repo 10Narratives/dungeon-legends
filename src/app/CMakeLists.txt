@@ -5,6 +5,11 @@ add_library(app STATIC
     ${APP_HEADER_FILES}
     ${APP_SOURCE_FILES}
 )
-target_link_libraries(app PRIVATE SFML::Graphics SFML::System SFML::Window)
+target_link_libraries(app PUBLIC
+    SFML::Graphics
+    SFML::System
+    SFML::Window
+    pugixml::pugixml
+)
 
 target_include_directories(app PUBLIC include)
