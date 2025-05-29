@@ -12,7 +12,7 @@ FetchContent_Declare(
   GIT_REPOSITORY https://github.com/zeux/pugixml
   GIT_TAG v1.15
 )
-FetchContent_MakeAvailable(pugixml)
+
 
 FetchContent_Declare(
   spdlog
@@ -20,6 +20,8 @@ FetchContent_Declare(
   GIT_TAG        v1.15.3
 )
 
+FetchContent_MakeAvailable(spdlog)
+FetchContent_MakeAvailable(pugixml)
 FetchContent_MakeAvailable(sfml)
 
 add_subdirectory(entities)
