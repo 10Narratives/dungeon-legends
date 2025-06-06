@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<configuration>
+    <window>
+        <title>Dungeon Legends</title>
+        <bitsPerPixel>32</bitsPerPixel>
+        <verticalSync>true</verticalSync>
+        <frameRateLimit>60</frameRateLimit>
+        <mouseCursorVisible>true</mouseCursorVisible>
+        <keyRepeatEnabled>true</keyRepeatEnabled>
+        <icon>assets/icon.png</icon>
+    </window>
+    <logging>
+        <level>info</level>
+        <pattern>[%Y-%m-%d %H:%M:%S] [%^%l%$] %v</pattern>
+    </logging>
+</configuration>
